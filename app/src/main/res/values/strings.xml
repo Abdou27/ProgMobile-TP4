@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">GestionOnglets</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="action_settings">Settings</string>
+    <string name="item1">Item 1</string>
+    <string name="item2">Item 2</string>
+    <string name="item3">Item 3</string>
+    <string name="item4">Item 4</string>
+    <string name="item5">Item 5</string>
+    <string name="item6">Item 6</string>
+    <string name="titre_section0">Minéraux</string>
+    <string name="titre_section1">Végétaux</string>
+    <string name="titre_section2">Animaux</string>
+    <string name="accessibility">Accessibility</string>
+    <string name="add_shopping_cart">Add to Shopping Cart</string>
+    <string name="account">Account</string>
+    <string name="alarm">Alarm</string>
+</resources>
