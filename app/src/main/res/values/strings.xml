@@ -9,11 +9,12 @@
     <string name="item4">Item 4</string>
     <string name="item5">Item 5</string>
     <string name="item6">Item 6</string>
-    <string name="titre_section0">Minéraux</string>
-    <string name="titre_section1">Végétaux</string>
-    <string name="titre_section2">Animaux</string>
     <string name="accessibility">Accessibility</string>
     <string name="add_shopping_cart">Add to Shopping Cart</string>
     <string name="account">Account</string>
     <string name="alarm">Alarm</string>
+    <string name="titre_spring">printemps</string>
+    <string name="titre_summer">été</string>
+    <string name="titre_autumn">automne</string>
+    <string name="titre_winter">hiver</string>
 </resources>

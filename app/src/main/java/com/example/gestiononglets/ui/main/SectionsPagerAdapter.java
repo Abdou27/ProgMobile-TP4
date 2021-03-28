@@ -34,11 +34,13 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         // getItem is called to instantiate the fragment for the given page.
         switch (position) {
             case 0:
-                return NatureFragment.newInstance(0, mContext.getString(R.string.titre_section0));
+                return SeasonFragment.newInstance(0, mContext.getString(R.string.titre_spring), R.drawable.spring);
             case 1:
-                return NatureFragment.newInstance(1, mContext.getString(R.string.titre_section1));
+                return SeasonFragment.newInstance(1, mContext.getString(R.string.titre_summer), R.drawable.summer);
             case 2:
-                return NatureFragment.newInstance(2, mContext.getString(R.string.titre_section2));
+                return SeasonFragment.newInstance(2, mContext.getString(R.string.titre_autumn), R.drawable.autumn);
+            case 3:
+                return SeasonFragment.newInstance(2, mContext.getString(R.string.titre_winter), R.drawable.winter);
         }
         return null;
     }
@@ -47,37 +49,22 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         Locale l = Locale.getDefault();
-        String titre = "";
-        Drawable icone = null;
-
         switch (position) {
             case 0:
-                titre = mContext.getString(R.string.titre_section0).toUpperCase(l);
-                icone = mContext.getResources().getDrawable(R.drawable.ic_minerals);
-                break;
+                return mContext.getString(R.string.titre_spring).toUpperCase(l);
             case 1:
-                titre = mContext.getString(R.string.titre_section1).toUpperCase(l);
-                icone = mContext.getResources().getDrawable(R.drawable.ic_vegetable);
-                break;
+                return mContext.getString(R.string.titre_summer).toUpperCase(l);
             case 2:
-                titre = mContext.getString(R.string.titre_section2).toUpperCase(l);
-                icone = mContext.getResources().getDrawable(R.drawable.ic_animal);
-                break;
+                return mContext.getString(R.string.titre_autumn).toUpperCase(l);
+            case 3:
+                return mContext.getString(R.string.titre_winter).toUpperCase(l);
         }
-
-        SpannableString sb = new SpannableString("  " + titre);
-        // un espace est ajouté pour séparer le texte de l'image
-
-        icone.setBounds(0, 0, icone.getIntrinsicWidth(), icone.getIntrinsicHeight());
-        ImageSpan span = new ImageSpan(icone, ImageSpan.ALIGN_BASELINE);
-        sb.setSpan(span, 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-        return sb;
+        return null;
     }
 
     @Override
     public int getCount() {
-        // Show 3 total pages.
-        return 3;
+        // Show 4 total pages.
+        return 4;
     }
 }
