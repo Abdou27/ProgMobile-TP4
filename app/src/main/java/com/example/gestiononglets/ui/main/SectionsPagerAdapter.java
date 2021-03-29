@@ -34,13 +34,15 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         // getItem is called to instantiate the fragment for the given page.
         switch (position) {
             case 0:
-                return SeasonFragment.newInstance(0, mContext.getString(R.string.titre_spring), R.drawable.spring);
+                return SeasonsFragment.newInstance(0, mContext.getString(R.string.titre_seasons));
             case 1:
-                return SeasonFragment.newInstance(1, mContext.getString(R.string.titre_summer), R.drawable.summer);
+                return SeasonFragment.newInstance(1, mContext.getString(R.string.titre_spring), R.drawable.spring);
             case 2:
-                return SeasonFragment.newInstance(2, mContext.getString(R.string.titre_autumn), R.drawable.autumn);
+                return SeasonFragment.newInstance(2, mContext.getString(R.string.titre_summer), R.drawable.summer);
             case 3:
-                return SeasonFragment.newInstance(2, mContext.getString(R.string.titre_winter), R.drawable.winter);
+                return SeasonFragment.newInstance(3, mContext.getString(R.string.titre_autumn), R.drawable.autumn);
+            case 4:
+                return SeasonFragment.newInstance(4, mContext.getString(R.string.titre_winter), R.drawable.winter);
         }
         return null;
     }
@@ -51,12 +53,14 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         Locale l = Locale.getDefault();
         switch (position) {
             case 0:
-                return mContext.getString(R.string.titre_spring).toUpperCase(l);
+                return mContext.getString(R.string.titre_seasons).toUpperCase(l);
             case 1:
-                return mContext.getString(R.string.titre_summer).toUpperCase(l);
+                return mContext.getString(R.string.titre_spring).toUpperCase(l);
             case 2:
-                return mContext.getString(R.string.titre_autumn).toUpperCase(l);
+                return mContext.getString(R.string.titre_summer).toUpperCase(l);
             case 3:
+                return mContext.getString(R.string.titre_autumn).toUpperCase(l);
+            case 4:
                 return mContext.getString(R.string.titre_winter).toUpperCase(l);
         }
         return null;
@@ -64,7 +68,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        // Show 4 total pages.
-        return 4;
+        // Show 5 total pages.
+        return 5;
     }
 }

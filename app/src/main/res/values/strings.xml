@@ -17,4 +17,5 @@
     <string name="titre_summer">été</string>
     <string name="titre_autumn">automne</string>
     <string name="titre_winter">hiver</string>
+    <string name="titre_seasons">Saisons</string>
 </resources>
