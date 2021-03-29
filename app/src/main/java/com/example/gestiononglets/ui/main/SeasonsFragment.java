@@ -1,61 +1,88 @@
 package com.example.gestiononglets.ui.main;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.viewpager.widget.ViewPager;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import androidx.fragment.app.Fragment;
-
 import com.example.gestiononglets.R;
 
-import static android.content.ContentValues.TAG;
-
 public class SeasonsFragment extends Fragment {
-    // Les champs utilisés par chaque Fragment
-    // Ils sont distincts pour chaque SeasonFragment instancié
-    private String title;
-    private int page;
-    /**
-     * Pour la sauvegarde et la récupération des données
-     * dans un Bundle
-     */
-    private static final String ARG_SECTION_NUMBER = "numero_page";
-    private static final String ARG_SECTION_TITLE = "titre_page";
+    ImageView spring, summer, autumn, winter;
+    ViewPager viewPager;
+
+    public SeasonsFragment() {
+        // Empty constructor
+    }
 
     /**
-     * Retourne une nouvelle instance de ce fragment
-     * pour le numéro de section donné.
+     * Use this factory method to create a new instance of
+     * this fragment.
+     *
+     * @return A new instance of fragment SeasonsFragment.
      */
-    public static SeasonFragment newInstance(int position, String title) {
-        Log.d("DEBUG", "newInstance");
-        SeasonFragment fragment = new SeasonFragment();
-        Bundle args = new Bundle();
-        args.putInt(ARG_SECTION_NUMBER, position);
-        args.putString(ARG_SECTION_TITLE, title);
-        fragment.setArguments(args);
+    public static SeasonsFragment newInstance() {
+        SeasonsFragment fragment = new SeasonsFragment();
         return fragment;
     }
 
-    // retrouver les valeurs des champs à partir du bundle
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Vérifier si cette méthode est appelée
-        Log.d("DEBUG", "onCreate");
-        page = getArguments().getInt(ARG_SECTION_NUMBER, 0);
-        title = getArguments().getString(ARG_SECTION_TITLE);
+        viewPager = getActivity().findViewById(R.id.view_pager);
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Vérifier si cette méthode est appelée
-        Log.d("DEBUG", "onCreateView");
+        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_seasons, container, false);
+        spring = view.findViewById(R.id.spring);
+        spring.setOnClickListener(goToSpring);
+        summer = view.findViewById(R.id.summer);
+        summer.setOnClickListener(goToSummer);
+        autumn = view.findViewById(R.id.autumn);
+        autumn.setOnClickListener(goToAutumn);
+        winter = view.findViewById(R.id.winter);
+        winter.setOnClickListener(goToWinter);
         return view;
     }
+
+    private View.OnClickListener goToSpring = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            viewPager.setCurrentItem(1);
+        }
+    };
+
+    private View.OnClickListener goToSummer = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            viewPager.setCurrentItem(2);
+        }
+    };
+
+    private View.OnClickListener goToAutumn = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            viewPager.setCurrentItem(3);
+        }
+    };
+
+    private View.OnClickListener goToWinter = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            viewPager.setCurrentItem(4);
+        }
+    };
+
+
 }

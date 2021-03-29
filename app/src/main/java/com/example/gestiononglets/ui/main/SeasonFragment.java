@@ -14,26 +14,20 @@ import com.example.gestiononglets.R;
 public class SeasonFragment extends Fragment {
     // Les champs utilisés par chaque Fragment
     // Ils sont distincts pour chaque SeasonFragment instancié
-    private String title;
-    private int page;
     private int image;
     /**
      * Pour la sauvegarde et la récupération des données
      * dans un Bundle
      */
-    private static final String ARG_SECTION_NUMBER = "numero_page";
-    private static final String ARG_SECTION_TITLE = "titre_page";
     private static final String ARG_SECTION_IMAGE = "image_page";
 
     /**
      * Retourne une nouvelle instance de ce fragment
      * pour le numéro de section donné.
      */
-    public static SeasonFragment newInstance(int position, String title, int image) {
+    public static SeasonFragment newInstance(int image) {
         SeasonFragment fragment = new SeasonFragment();
         Bundle args = new Bundle();
-        args.putInt(ARG_SECTION_NUMBER, position);
-        args.putString(ARG_SECTION_TITLE, title);
         args.putInt(ARG_SECTION_IMAGE, image);
         fragment.setArguments(args);
         return fragment;
@@ -43,8 +37,6 @@ public class SeasonFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        page = getArguments().getInt(ARG_SECTION_NUMBER, 0);
-        title = getArguments().getString(ARG_SECTION_TITLE);
         image = getArguments().getInt(ARG_SECTION_IMAGE, 0);
     }
 

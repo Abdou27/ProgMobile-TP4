@@ -1,13 +1,8 @@
 package com.example.gestiononglets.ui.main;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.style.ImageSpan;
 
 import androidx.annotation.Nullable;
-import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -34,15 +29,15 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         // getItem is called to instantiate the fragment for the given page.
         switch (position) {
             case 0:
-                return SeasonsFragment.newInstance(0, mContext.getString(R.string.titre_seasons));
+                return SeasonsFragment.newInstance();
             case 1:
-                return SeasonFragment.newInstance(1, mContext.getString(R.string.titre_spring), R.drawable.spring);
+                return SeasonFragment.newInstance(R.drawable.spring);
             case 2:
-                return SeasonFragment.newInstance(2, mContext.getString(R.string.titre_summer), R.drawable.summer);
+                return SeasonFragment.newInstance(R.drawable.summer);
             case 3:
-                return SeasonFragment.newInstance(3, mContext.getString(R.string.titre_autumn), R.drawable.autumn);
+                return SeasonFragment.newInstance(R.drawable.autumn);
             case 4:
-                return SeasonFragment.newInstance(4, mContext.getString(R.string.titre_winter), R.drawable.winter);
+                return SeasonFragment.newInstance(R.drawable.winter);
         }
         return null;
     }
